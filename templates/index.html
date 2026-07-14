@@ -3,55 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VetCare Chatbot - Meadow Vet Care</title>
+    <title>Meadow Vet Care - Your Pet Health Partner</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="chat-container">
-        <header class="chat-header">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon">🐾</span>
-                    <h1>VetCare Assistant</h1>
-                </div>
-                <p class="subtitle">Meadow Vet Care - Your Pet Health Partner</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-paw">🐾</span>
+                <span class="logo-text">Meadow Vet Care</span>
             </div>
-            <button id="resetBtn" class="reset-btn" title="Reset Conversation">🔄</button>
-        </header>
-        
-        <main class="chat-messages" id="chatMessages">
-            <div class="message bot-message">
-                <div class="message-avatar">🤖</div>
-                <div class="message-content">
-                    <p>Hello! I'm VetCare Assistant, your AI helper for Meadow Vet Care.</p>
-                    <p>I can help you with:</p>
-                    <ul>
-                        <li>Finding veterinary services</li>
-                        <li>Checking prices and availability</li>
-                        <li>Booking appointments</li>
-                        <li>Learning about special offers</li>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-cta" onclick="openChat()">Chat with Us</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-badge">Trusted by 5000+ Pet Owners</span>
+                <h1>Compassionate Care for Your <span class="highlight">Beloved Pets</span></h1>
+                <p>At Meadow Vet Care, we treat your pets like family. Our team of expert veterinarians provides world-class medical care with a personal touch.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openChat()">Chat with AI Assistant</button>
+                    <button class="btn btn-secondary">Book Appointment</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">10k+</span>
+                        <span class="stat-label">Happy Pets</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Emergency Care</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <div class="floating-card card-1">
+                        <span class="card-icon">🐕</span>
+                        <span class="card-text">Dog Care</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <span class="card-icon">🐈</span>
+                        <span class="card-text">Cat Care</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <span class="card-icon">🐰</span>
+                        <span class="card-text">Small Pets</span>
+                    </div>
+                    <div class="hero-illustration">
+                        <div class="vet-circle">
+                            <span class="vet-icon">👩‍⚕️</span>
+                        </div>
+                        <div class="pet-circle">
+                            <span class="pet-icon">🐕</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-container">
+            <span class="section-badge">Our Services</span>
+            <h2>Comprehensive Veterinary Services</h2>
+            <p class="section-subtitle">From routine check-ups to emergency care, we offer a full range of veterinary services.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🩺</div>
+                    <h3>General Consultation</h3>
+                    <p>Expert health assessments and personalized care plans for your pets.</p>
+                    <span class="service-price">From €45</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💉</div>
+                    <h3>Vaccinations</h3>
+                    <p>Complete vaccination programs to keep your pets protected.</p>
+                    <span class="service-price">From €35</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🦷</div>
+                    <h3>Dental Care</h3>
+                    <p>Professional dental cleaning and oral health services.</p>
+                    <span class="service-price">From €80</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Diagnostics</h3>
+                    <p>Advanced diagnostic testing with modern equipment.</p>
+                    <span class="service-price">From €60</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Surgery</h3>
+                    <p>Safe and professional surgical procedures.</p>
+                    <span class="service-price">From €150</span>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚑</div>
+                    <h3>Emergency Care</h3>
+                    <p>24/7 emergency services for urgent pet health needs.</p>
+                    <span class="service-price">From €100</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2>Your Pet Deserves the Best Care</h2>
+                    <p>With over 15 years of experience, our team of dedicated veterinarians combines expertise with genuine love for animals. We use the latest technology and compassionate approach to ensure your pets receive the highest quality care.</p>
+                    <ul class="about-features">
+                        <li><span class="check-icon">✓</span> Certified Veterinary Professionals</li>
+                        <li><span class="check-icon">✓</span> State-of-the-Art Equipment</li>
+                        <li><span class="check-icon">✓</span> Compassionate & Personalized Care</li>
+                        <li><span class="check-icon">✓</span> Emergency Services Available 24/7</li>
                     </ul>
-                    <p>How can I assist you today?</p>
+                    <button class="btn btn-primary" onclick="openChat()">Meet Our AI Assistant</button>
+                </div>
+                <div class="about-image">
+                    <div class="about-cards">
+                        <div class="about-card">
+                            <span class="about-card-icon">🏥</span>
+                            <h4>Modern Facility</h4>
+                            <p>Equipped with the latest veterinary technology</p>
+                        </div>
+                        <div class="about-card">
+                            <span class="about-card-icon">❤️</span>
+                            <h4>Caring Staff</h4>
+                            <p>Passionate professionals who love animals</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </main>
-        
-        <footer class="chat-input">
-            <form id="chatForm" class="input-form">
-                <input 
-                    type="text" 
-                    id="userInput" 
-                    placeholder="Type your message here..." 
-                    autocomplete="off"
-                    required
-                >
-                <button type="submit" id="sendBtn" class="send-btn">
-                    <span class="send-icon">➤</span>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <span class="section-badge">Get in Touch</span>
+            <h2>Contact Us Today</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">📍</span>
+                    <h4>Visit Us</h4>
+                    <p>123 Meadow Lane<br>Dublin, Ireland</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">📞</span>
+                    <h4>Call Us</h4>
+                    <p>(555) 123-4567<br>Mon-Sat: 8AM - 8PM</p>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-icon">✉️</span>
+                    <h4>Email Us</h4>
+                    <p>info@meadowvetcare.com<br>support@meadowvetcare.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-paw">🐾</span>
+                <span class="logo-text">Meadow Vet Care</span>
+            </div>
+            <p class="footer-text">Providing compassionate veterinary care since 2010. Your pet's health is our priority.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Careers</a>
+            </div>
+            <p class="footer-copyright">© 2026 Meadow Vet Care. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-widget">
+        <!-- Chat Header -->
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <div class="chat-avatar">
+                    <span>🐾</span>
+                    <span class="online-dot"></span>
+                </div>
+                <div class="chat-header-text">
+                    <h3>VetCare Assistant</h3>
+                    <span class="chat-status">Online • Ready to help</span>
+                </div>
+            </div>
+            <div class="chat-header-actions">
+                <button id="resetBtn" class="chat-action-btn" title="Reset Conversation">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                        <path d="M3 3v5h5"/>
+                    </svg>
                 </button>
+                <button id="closeChatBtn" class="chat-action-btn" title="Close Chat">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">
+                    <span>🐾</span>
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble">
+                        <p class="greeting">Hello! 👋 I'm your VetCare Assistant.</p>
+                        <p>I can help you with:</p>
+                        <div class="quick-actions">
+                            <button class="quick-btn" onclick="sendQuickMessage('What services do you offer?')">🔍 Services</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('Show me prices')">💰 Prices</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('Check availability')">📅 Availability</button>
+                            <button class="quick-btn" onclick="sendQuickMessage('Any special offers?')">🎁 Offers</button>
+                        </div>
+                        <p class="help-text">Or just type your question below!</p>
+                    </div>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-area">
+            <form id="chatForm" class="chat-form">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Ask about services, prices, or book an appointment..." 
+                        autocomplete="off"
+                        required
+                    >
+                    <button type="submit" id="sendBtn" class="send-btn" title="Send Message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                        </svg>
+                    </button>
+                </div>
             </form>
-        </footer>
+            <div class="chat-footer-text">
+                Powered by AI • Meadow Vet Care
+            </div>
+        </div>
     </div>
-    
+
+    <!-- Chat Toggle Button -->
+    <button id="chatToggle" class="chat-toggle" onclick="toggleChat()">
+        <span class="chat-toggle-icon">💬</span>
+        <span class="chat-toggle-text">Chat with us</span>
+    </button>
+
     <script src="/static/js/chat.js"></script>
 </body>
 </html>
